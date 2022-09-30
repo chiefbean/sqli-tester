@@ -1,0 +1,28 @@
+{
+    "mssql": {
+        "host": "mssql",
+        "user": "mssql",
+        "pass": "password",
+        "db": ""
+    },
+    "oracle": {
+        "user": "oracle",
+        "pass": "password",
+        "cs": "localhost"
+    },
+    "mysql": {
+        "host": "mysql",
+        "user": "root",
+        "pass": "password",
+        "db": "tempdb"
+    },
+    "psql": {
+        "host": "psql",
+        "user": "postgres",
+        "pass": "password",
+        "db": "postgres"
+    },
+    "sqlite": {
+        "path": "/Users/bean/sql-tester/backend/db.db"
+    }
+}

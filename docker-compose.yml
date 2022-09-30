@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  py:
+    build: './backend/'
+    ports:
+      - "5001:5001"
+    networks:
+      - backend
+  angular:
+    build: './frontend/'
+    ports:
+      - "4200:4200"
+    networks:
+      - frontend
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=tempdb
+    networks:
+      - backend
+  # mssql:
+  #   image: mcr.microsoft.com/mssql/server:2022-latest
+  #   environment:
+  #     - MSSQL_SA_PASSWORD=Password1!
+  #     - ACCEPT_EULA=Y
+  #   volumes:
+  #     - ./mssql:/docker-entrypoint-initdb.d
+  #   networks:
+  #     - backend
+  psql:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./psql:/docker-entrypoint-initdb.d
+    networks:
+      - backend
+  # oracle:
+  #   image: gvenzl/oracle-xe
+  #   environment:
+  #     - ORACLE_PASSWORD=password
+  #   volumes:
+  #     - ./oracle:/opt/oracle/oradata
+networks:
+  frontend:
+  backend:
