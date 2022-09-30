@@ -1,0 +1,21 @@
+<div id="grid-container">
+  <div id="control">
+    <select [(ngModel)]="version" (change)="updateDB()">
+      <option value="mysql">MySQL</option>
+      <option value="mssql">MSSQL</option>
+      <option value="psql">PostgreSQL</option>
+      <option value="oracle">Oracle</option>
+      <option value="sqlite" selected>SQLite</option>
+    </select>
+  </div>
+  <div id="schema-container">
+    <app-schema></app-schema>
+  </div>
+  <div id="input-container">
+    <app-input></app-input>
+  </div>
+  <div id="output-container">
+    <app-output></app-output>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+<div id="container">
+    <!-- <textarea id="code" #editor></textarea> -->
+    <ngx-codemirror
+    [(ngModel)]="value"
+    [options]="{
+        lineNumbers: true,
+        mode: 'sql',
+        lineWrapping: true
+    }"
+    (cursorActivity)="doKeyUp()"
+    ></ngx-codemirror>
+    <!-- <textarea [name]="name" (keyup)="doKeyUp()" [(ngModel)]="value"></textarea>
+    <code>
+        <ng-container *ngFor="let token of tokens">
+            <ng-container *ngIf="token.type == 'none'; else span"><span>{{ token.content }}</span></ng-container>
+            <ng-template #span>
+                <span [class]="'token ' + token.type">{{ token.content }}</span>
+            </ng-template>
+        </ng-container>
+    </code> -->
+</div>

@@ -1,0 +1,13 @@
+<div id="left"><button (click)="runSchema()">Save Schema</button></div>
+<div id="left"><button (click)="runSQL()">Run Query</button></div>
+
+<h1>Output</h1>
+<code id="error" [class]="errorClass">{{ error }}</code>
+<code id="info" [class]="infoClass">{{ info }}</code>
+<table id="output" [class]="tableClass">
+    <tbody>
+        <tr *ngFor="let row of table">
+            <td *ngFor="let item of row">{{ item }}</td>
+        </tr>
+    </tbody>
+</table>
